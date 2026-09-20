@@ -1,0 +1,3143 @@
+/* ==========================================================
+   L&R DESIGN & BUILD LTD
+   BUILDING SERVICES PAGE
+
+   FILE:
+   css/services.css
+
+   BREAKPOINTS
+   Desktop       1200px+
+   Laptop        992px - 1199px
+   Tablet        768px - 991px
+   Mobile        <= 767px
+   Small mobile  <= 479px
+========================================================== */
+
+
+/* ==========================================================
+   PAGE SAFETY
+========================================================== */
+
+.services-hero,
+.services-featured-section,
+.brickwork-section,
+.services-core-section,
+.services-faq-section,
+.services-cta-section {
+  width: 100%;
+}
+
+
+.services-hero *,
+.services-featured-section *,
+.brickwork-section *,
+.services-core-section *,
+.services-faq-section *,
+.services-cta-section * {
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.services-hero {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+
+  height: 84svh;
+  min-height: 710px;
+  max-height: 900px;
+
+  overflow: hidden;
+
+  background: #000000;
+}
+
+
+.services-hero-media {
+  position: absolute;
+
+  inset: 0;
+}
+
+
+.services-hero-media img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    saturate(0.5)
+    brightness(0.62)
+    contrast(1.08);
+}
+
+
+.services-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.22) 34%,
+      rgba(0, 0, 0, 0.66) 73%,
+      rgba(0, 0, 0, 0.97) 100%
+    );
+}
+
+
+.services-hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  padding-top: 150px;
+
+  padding-bottom:
+    clamp(
+      55px,
+      7vh,
+      80px
+    );
+}
+
+
+.services-hero-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  align-items: end;
+
+  gap:
+    clamp(
+      55px,
+      7vw,
+      110px
+    );
+}
+
+
+.services-hero-main {
+  min-width: 0;
+}
+
+
+.services-hero-kicker {
+  margin-bottom: 18px;
+
+  color:
+    var(--lr-cyan, #90f7f9);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.services-hero-main h1 {
+  max-width: 980px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      56px,
+      5.8vw,
+      89px
+    );
+
+  font-weight: 700;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.065em;
+
+  text-wrap: balance;
+}
+
+
+.services-hero-main h1 span {
+  display: block;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+}
+
+
+.services-hero-side {
+  max-width: 500px;
+
+  padding-bottom: 5px;
+}
+
+
+.services-hero-side p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 18px;
+
+  line-height: 1.72;
+}
+
+
+/* ==========================================================
+   HERO SERVICE TAGS
+
+   Information only, so these must NOT look like buttons.
+========================================================== */
+
+.services-hero-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 24px;
+}
+
+
+.services-hero-tags span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding:
+    0
+    17px;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+
+  background:
+    #151a1a;
+
+  border:
+    2px solid
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  cursor: default;
+}
+
+
+/* ==========================================================
+   FEATURED SERVICES
+========================================================== */
+
+.services-featured-section {
+  padding:
+    clamp(
+      95px,
+      8vw,
+      125px
+    )
+    0;
+
+  background:
+    #000000;
+}
+
+
+.services-featured-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(300px, 0.7fr);
+
+  align-items: end;
+
+  gap:
+    clamp(
+      50px,
+      7vw,
+      105px
+    );
+
+  margin-bottom: 58px;
+}
+
+
+.services-featured-heading h2 {
+  max-width: 860px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      42px,
+      4.4vw,
+      68px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+
+  text-wrap: balance;
+}
+
+
+.services-featured-heading h2 span {
+  display: block;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+}
+
+
+.services-featured-heading > p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 17px;
+
+  line-height: 1.72;
+}
+
+
+/* ==========================================================
+   SHARED SERVICE SLIDER
+========================================================== */
+
+.services-slider-shell {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.services-slider-arrow {
+  display: none;
+
+  padding: 0;
+
+  border: 0;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   FEATURED SERVICES TRACK
+========================================================== */
+
+.services-featured-track {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 16px;
+}
+
+
+/* ==========================================================
+   FEATURED SERVICE CARD
+========================================================== */
+
+.services-feature-card {
+  overflow: hidden;
+
+  background:
+    #0d1010;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 28px;
+}
+
+
+.services-feature-image {
+  height:
+    clamp(
+      330px,
+      30vw,
+      450px
+    );
+
+  overflow: hidden;
+}
+
+
+.services-feature-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.64)
+    brightness(0.84);
+
+  transition:
+    transform
+    700ms
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    filter
+    500ms
+    ease;
+}
+
+
+.services-feature-card:hover
+.services-feature-image img {
+  filter:
+    saturate(0.76)
+    brightness(0.89);
+
+  transform:
+    scale(1.03);
+}
+
+
+.services-feature-content {
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr);
+
+  gap: 19px;
+
+  padding:
+    31px
+    30px
+    33px;
+}
+
+
+.services-feature-number {
+  color:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.services-feature-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+.services-feature-content h3 {
+  margin:
+    0
+    0
+    14px;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      34px,
+      3.1vw,
+      46px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.045em;
+}
+
+
+.services-feature-content p {
+  max-width: 590px;
+
+  margin:
+    0
+    0
+    24px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   FEATURED INFORMATION PILLS
+
+   Dark solid pill + cyan border.
+   Deliberately different from CTA buttons.
+========================================================== */
+
+.services-feature-points {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 28px;
+}
+
+
+.services-feature-points span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding:
+    0
+    16px;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+
+  background:
+    #171c1c;
+
+  border:
+    2px solid
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  cursor: default;
+}
+
+
+/* ==========================================================
+   FEATURED CTA
+========================================================== */
+
+.services-feature-button {
+  min-height: 52px;
+
+  padding:
+    0
+    25px;
+
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border:
+    2px solid
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0
+    8px
+    24px
+    rgba(144, 247, 249, 0.14);
+
+  transition:
+    transform
+    var(--transition, 250ms ease),
+    background-color
+    var(--transition, 250ms ease),
+    border-color
+    var(--transition, 250ms ease);
+}
+
+
+.services-feature-button:hover {
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+
+  border-color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ==========================================================
+   BRICKWORK FEATURE SECTION
+========================================================== */
+
+.brickwork-section {
+  padding:
+    20px
+    0
+    115px;
+
+  background:
+    #000000;
+}
+
+
+.brickwork-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.82fr)
+    minmax(0, 1.18fr);
+
+  min-height: 570px;
+
+  overflow: hidden;
+
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 30px;
+}
+
+
+.brickwork-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    clamp(
+      42px,
+      5vw,
+      70px
+    );
+}
+
+
+.brickwork-kicker {
+  margin-bottom: 18px;
+
+  color:
+    rgba(0, 0, 0, 0.58);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.brickwork-content h2 {
+  margin:
+    0
+    0
+    21px;
+
+  color: #000000;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      42px,
+      4.1vw,
+      64px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.058em;
+
+  text-wrap: balance;
+}
+
+
+.brickwork-content h2 span {
+  display: block;
+
+  color:
+    rgba(0, 0, 0, 0.54);
+}
+
+
+.brickwork-content p {
+  max-width: 570px;
+
+  margin:
+    0
+    0
+    25px;
+
+  color:
+    rgba(0, 0, 0, 0.68);
+
+  font-size: 17px;
+
+  line-height: 1.72;
+}
+
+
+/* ==========================================================
+   BRICKWORK INFORMATION PILLS
+
+   White pills on the cyan section.
+   The CTA underneath stays black.
+========================================================== */
+
+.brickwork-points {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 29px;
+}
+
+
+.brickwork-points span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 41px;
+
+  padding:
+    0
+    15px;
+
+  color: #000000;
+
+  background: #ffffff;
+
+  border:
+    2px solid
+    #000000;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  cursor: default;
+}
+
+
+/* ==========================================================
+   BRICKWORK CTA
+========================================================== */
+
+.brickwork-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-start;
+
+  min-height: 52px;
+
+  padding:
+    0
+    25px;
+
+  color: #ffffff;
+
+  background: #000000;
+
+  border:
+    2px solid
+    #000000;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0
+    8px
+    24px
+    rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform
+    var(--transition, 250ms ease),
+    background-color
+    var(--transition, 250ms ease);
+}
+
+
+.brickwork-button:hover {
+  color: #ffffff;
+
+  background:
+    #171717;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ==========================================================
+   BRICKWORK IMAGE
+========================================================== */
+
+.brickwork-image {
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.brickwork-image::after {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(144, 247, 249, 0.12),
+      transparent 28%
+    );
+
+  content: "";
+}
+
+
+.brickwork-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.72)
+    brightness(0.92)
+    contrast(1.03);
+
+  transition:
+    transform
+    850ms
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    filter
+    500ms
+    ease;
+}
+
+
+.brickwork-card:hover
+.brickwork-image img {
+  filter:
+    saturate(0.84)
+    brightness(0.96);
+
+  transform:
+    scale(1.025);
+}
+
+
+/* ==========================================================
+   COMPLETE BUILDING SERVICES
+========================================================== */
+
+.services-core-section {
+  padding:
+    clamp(
+      95px,
+      8vw,
+      125px
+    )
+    0;
+
+  overflow: hidden;
+
+  background:
+    #070909;
+}
+
+
+.services-core-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(300px, 0.8fr);
+
+  align-items: end;
+
+  gap:
+    clamp(
+      48px,
+      7vw,
+      100px
+    );
+
+  margin-bottom: 57px;
+}
+
+
+.services-core-heading h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      42px,
+      4.3vw,
+      67px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+
+  text-wrap: balance;
+}
+
+
+.services-core-heading h2 span {
+  display: block;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+}
+
+
+.services-core-heading > p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  font-size: 17px;
+
+  line-height: 1.72;
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICES GRID
+========================================================== */
+
+.services-core-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 13px;
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE CARD
+
+   Full image visible at all times.
+========================================================== */
+
+.services-core-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 410px;
+
+  overflow: hidden;
+
+  background:
+    #101313;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+
+  border-radius: 24px;
+
+  isolation: isolate;
+
+  transition:
+    transform
+    450ms
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    border-color
+    350ms
+    ease,
+    box-shadow
+    350ms
+    ease;
+}
+
+
+.services-core-card:hover {
+  border-color:
+    rgba(144, 247, 249, 0.5);
+
+  box-shadow:
+    0
+    22px
+    55px
+    rgba(0, 0, 0, 0.32);
+
+  transform:
+    translateY(-6px);
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE IMAGE
+========================================================== */
+
+.services-core-image {
+  position: absolute;
+
+  z-index: -3;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  opacity: 1;
+}
+
+
+.services-core-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.82)
+    brightness(0.86)
+    contrast(1.03);
+
+  transform:
+    scale(1.025);
+
+  transition:
+    transform
+    800ms
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    filter
+    600ms
+    ease;
+}
+
+
+.services-core-card:hover
+.services-core-image img {
+  filter:
+    saturate(0.98)
+    brightness(0.93)
+    contrast(1.02);
+
+  transform:
+    scale(1);
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE GRADIENT
+
+   Much lighter than before.
+   Image remains clearly visible.
+========================================================== */
+
+.services-core-card::after {
+  position: absolute;
+
+  z-index: -2;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.03) 0%,
+      rgba(0, 0, 0, 0.05) 27%,
+      rgba(0, 0, 0, 0.13) 45%,
+      rgba(0, 0, 0, 0.52) 70%,
+      rgba(0, 0, 0, 0.88) 100%
+    );
+
+  content: "";
+
+  transition:
+    background
+    500ms
+    ease;
+}
+
+
+.services-core-card:hover::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.01) 0%,
+      rgba(0, 0, 0, 0.03) 30%,
+      rgba(0, 0, 0, 0.10) 48%,
+      rgba(0, 0, 0, 0.44) 72%,
+      rgba(0, 0, 0, 0.84) 100%
+    );
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE CONTENT
+========================================================== */
+
+.services-core-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  min-height: 410px;
+
+  padding: 25px;
+
+  background: transparent;
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE NUMBER
+========================================================== */
+
+.services-core-index {
+  position: absolute;
+
+  top: 22px;
+  left: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  margin: 0;
+
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border:
+    2px solid
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+
+  border-radius: 50%;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0
+    8px
+    24px
+    rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================
+   COMPLETE SERVICE TEXT
+========================================================== */
+
+.services-core-card h3 {
+  max-width: 340px;
+
+  margin:
+    0
+    0
+    10px;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size: 26px;
+
+  font-weight: 700;
+
+  line-height: 1.14;
+
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0
+    2px
+    16px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+.services-core-card p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  text-shadow:
+    0
+    2px
+    15px
+    rgba(0, 0, 0, 0.55);
+}
+
+
+/* ==========================================================
+   FAQ SECTION
+========================================================== */
+
+.services-faq-section {
+  padding:
+    105px
+    0
+    110px;
+
+  background:
+    #000000;
+}
+
+
+/* ==========================================================
+   FAQ CENTERED HEADING
+========================================================== */
+
+.services-faq-heading {
+  max-width: 850px;
+
+  margin:
+    0
+    auto
+    53px;
+
+  text-align: center;
+}
+
+
+.services-faq-kicker {
+  justify-content: center;
+
+  margin-bottom: 17px;
+}
+
+
+.services-faq-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      43px,
+      4.5vw,
+      69px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.058em;
+
+  text-wrap: balance;
+}
+
+
+.services-faq-heading h2 span {
+  display: block;
+
+  color:
+    var(
+      --lr-cyan-light,
+      #cafeff
+    );
+}
+
+
+.services-faq-heading p {
+  max-width: 660px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.66);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   FAQ TWO COLUMNS
+========================================================== */
+
+.services-faq-columns {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+.services-faq-column {
+  display: grid;
+
+  align-content: start;
+
+  gap: 12px;
+}
+
+
+/* ==========================================================
+   FAQ ITEM
+========================================================== */
+
+.services-faq-item {
+  overflow: hidden;
+
+  background:
+    #101313;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 18px;
+
+  transition:
+    border-color
+    var(--transition, 250ms ease),
+    background-color
+    var(--transition, 250ms ease);
+}
+
+
+.services-faq-item:hover,
+.services-faq-item[open] {
+  background:
+    #131717;
+
+  border-color:
+    rgba(144, 247, 249, 0.27);
+}
+
+
+.services-faq-item summary {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    40px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 93px;
+
+  padding:
+    21px
+    19px
+    21px
+    24px;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.025em;
+}
+
+
+.services-faq-item
+summary::-webkit-details-marker {
+  display: none;
+}
+
+
+/* ==========================================================
+   FAQ PLUS
+========================================================== */
+
+.services-faq-toggle {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 39px;
+  height: 39px;
+
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 50%;
+}
+
+
+.services-faq-toggle::before,
+.services-faq-toggle::after {
+  position: absolute;
+
+  width: 12px;
+  height: 1.8px;
+
+  background: #000000;
+
+  content: "";
+
+  transition:
+    transform
+    var(--transition, 250ms ease);
+}
+
+
+.services-faq-toggle::after {
+  transform:
+    rotate(90deg);
+}
+
+
+.services-faq-item[open]
+.services-faq-toggle::after {
+  transform:
+    rotate(0deg);
+}
+
+
+/* ==========================================================
+   FAQ ANSWER
+========================================================== */
+
+.services-faq-answer {
+  padding:
+    0
+    64px
+    24px
+    24px;
+}
+
+
+.services-faq-answer p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.services-cta-section {
+  padding:
+    0
+    0
+    90px;
+
+  background:
+    #000000;
+}
+
+
+.services-cta-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: end;
+
+  gap: 50px;
+
+  padding:
+    clamp(
+      43px,
+      5vw,
+      65px
+    );
+
+  color: #000000;
+
+  background:
+    var(
+      --lr-cyan,
+      #90f7f9
+    );
+
+  border-radius: 30px;
+}
+
+
+.services-cta-kicker {
+  margin-bottom: 15px;
+
+  color:
+    rgba(0, 0, 0, 0.58);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.services-cta-card h2 {
+  max-width: 790px;
+
+  margin: 0;
+
+  color: #000000;
+
+  font-family:
+    var(
+      --font-title,
+      "Plus Jakarta Sans",
+      sans-serif
+    );
+
+  font-size:
+    clamp(
+      42px,
+      4.3vw,
+      67px
+    );
+
+  font-weight: 700;
+
+  line-height: 1.01;
+
+  letter-spacing: -0.06em;
+
+  text-wrap: balance;
+}
+
+
+.services-cta-card h2 span {
+  display: block;
+
+  color:
+    rgba(0, 0, 0, 0.54);
+}
+
+
+.services-cta-card p {
+  max-width: 650px;
+
+  margin:
+    20px
+    0
+    0;
+
+  color:
+    rgba(0, 0, 0, 0.66);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+.services-cta-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  min-width: 225px;
+}
+
+
+.services-cta-primary,
+.services-cta-secondary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 51px;
+
+  padding:
+    0
+    23px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    transform
+    var(--transition, 250ms ease),
+    background-color
+    var(--transition, 250ms ease),
+    border-color
+    var(--transition, 250ms ease);
+}
+
+
+.services-cta-primary {
+  color: #ffffff;
+
+  background: #000000;
+
+  border:
+    2px solid
+    #000000;
+}
+
+
+.services-cta-primary:hover {
+  color: #ffffff;
+
+  background:
+    #141414;
+
+  border-color:
+    #141414;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.services-cta-secondary {
+  color: #000000;
+
+  background: #ffffff;
+
+  border:
+    2px solid
+    #ffffff;
+}
+
+
+.services-cta-secondary:hover {
+  color: #000000;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-color:
+    rgba(255, 255, 255, 0.84);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ==========================================================
+   LAPTOP
+   992px - 1199px
+========================================================== */
+
+@media
+  (min-width: 992px)
+  and
+  (max-width: 1199px) {
+
+  /* HERO */
+
+  .services-hero {
+    height: 82svh;
+
+    min-height: 660px;
+  }
+
+
+  .services-hero-container {
+    padding-top: 135px;
+
+    padding-bottom: 55px;
+  }
+
+
+  .services-hero-layout {
+    grid-template-columns:
+      minmax(0, 1.22fr)
+      minmax(270px, 0.78fr);
+
+    gap: 42px;
+  }
+
+
+  .services-hero-main h1 {
+    font-size:
+      clamp(
+        50px,
+        5.6vw,
+        71px
+      );
+  }
+
+
+  .services-hero-side p {
+    font-size: 16px;
+  }
+
+
+  /* FEATURED */
+
+  .services-feature-content {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr);
+
+    padding: 25px;
+  }
+
+
+  .services-feature-content p {
+    font-size: 15px;
+  }
+
+
+  .services-feature-points span {
+    font-size: 11px;
+  }
+
+
+  /* BRICKWORK */
+
+  .brickwork-card {
+    min-height: 525px;
+  }
+
+
+  .brickwork-content {
+    padding: 45px;
+  }
+
+
+  /* CORE */
+
+  .services-core-card,
+  .services-core-content {
+    min-height: 370px;
+  }
+
+
+  .services-core-card h3 {
+    font-size: 23px;
+  }
+
+
+  .services-core-card p {
+    font-size: 14px;
+  }
+
+
+  /* FAQ */
+
+  .services-faq-item summary {
+    font-size: 16px;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+   768px - 991px
+========================================================== */
+
+@media
+  (min-width: 768px)
+  and
+  (max-width: 991px) {
+
+  /* ======================================================
+     HERO
+  ====================================================== */
+
+  .services-hero {
+    height: auto;
+
+    min-height: 650px;
+  }
+
+
+  .services-hero-container {
+    padding-top: 130px;
+
+    padding-bottom: 54px;
+  }
+
+
+  .services-hero-layout {
+    grid-template-columns: 1fr;
+
+    gap: 23px;
+  }
+
+
+  .services-hero-main {
+    max-width: 800px;
+  }
+
+
+  .services-hero-main h1 {
+    font-size:
+      clamp(
+        49px,
+        7.5vw,
+        68px
+      );
+  }
+
+
+  .services-hero-side {
+    max-width: 680px;
+  }
+
+
+  /* ======================================================
+     FEATURED SECTION
+  ====================================================== */
+
+  .services-featured-heading {
+    grid-template-columns: 1fr;
+
+    gap: 21px;
+
+    margin-bottom: 42px;
+  }
+
+
+  .services-featured-heading > p {
+    max-width: 680px;
+  }
+
+
+  .services-featured-track {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .services-feature-image {
+    height: 315px;
+  }
+
+
+  .services-feature-content {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 22px;
+  }
+
+
+  .services-feature-content h3 {
+    font-size: 31px;
+  }
+
+
+  .services-feature-content p {
+    font-size: 14px;
+  }
+
+
+  .services-feature-points span {
+    min-height: 39px;
+
+    padding:
+      0
+      12px;
+
+    font-size: 10px;
+  }
+
+
+  /* ======================================================
+     BRICKWORK
+  ====================================================== */
+
+  .brickwork-card {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    min-height: 500px;
+  }
+
+
+  .brickwork-content {
+    padding: 35px;
+  }
+
+
+  .brickwork-content p {
+    font-size: 15px;
+  }
+
+
+  /* ======================================================
+     CORE SERVICES
+  ====================================================== */
+
+  .services-core-heading {
+    grid-template-columns: 1fr;
+
+    gap: 21px;
+
+    margin-bottom: 42px;
+  }
+
+
+  .services-core-heading > p {
+    max-width: 680px;
+  }
+
+
+  .services-core-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .services-core-card,
+  .services-core-content {
+    min-height: 370px;
+  }
+
+
+  /* ======================================================
+     FAQ
+  ====================================================== */
+
+  .services-faq-section {
+    padding:
+      90px
+      0;
+  }
+
+
+  .services-faq-heading {
+    margin-bottom: 42px;
+  }
+
+
+  .services-faq-columns {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .services-faq-item summary {
+    min-height: 88px;
+
+    font-size: 15px;
+  }
+
+
+  .services-faq-answer p {
+    font-size: 14px;
+  }
+
+
+  /* ======================================================
+     CTA
+  ====================================================== */
+
+  .services-cta-card {
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 28px;
+  }
+
+
+  .services-cta-actions {
+    flex-direction: row;
+
+    min-width: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   <= 767px
+========================================================== */
+
+@media (max-width: 767px) {
+
+  /* ======================================================
+     HERO
+  ====================================================== */
+
+  .services-hero {
+    align-items: flex-start;
+
+    height: auto;
+
+    min-height: auto;
+  }
+
+
+  .services-hero-media img {
+    object-position:
+      54%
+      center;
+
+    filter:
+      saturate(0.44)
+      brightness(0.47)
+      contrast(1.06);
+  }
+
+
+  .services-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.59) 0%,
+        rgba(0, 0, 0, 0.50) 34%,
+        rgba(0, 0, 0, 0.84) 75%,
+        #000000 100%
+      );
+  }
+
+
+  .services-hero-container {
+    padding-top: 108px;
+
+    padding-bottom: 52px;
+  }
+
+
+  .services-hero-layout {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    text-align: center;
+  }
+
+
+  .services-hero-main,
+  .services-hero-side {
+    width: 100%;
+
+    max-width: 610px;
+
+    margin-inline: auto;
+  }
+
+
+  .services-hero-kicker {
+    margin-bottom: 13px;
+
+    font-size: 9px;
+  }
+
+
+  .services-hero-main h1 {
+    max-width: 590px;
+
+    margin-inline: auto;
+
+    font-size:
+      clamp(
+        36px,
+        10.3vw,
+        49px
+      );
+
+    line-height: 1;
+  }
+
+
+  .services-hero-side p {
+    max-width: 550px;
+
+    margin-inline: auto;
+
+    font-size: 15px;
+
+    line-height: 1.64;
+  }
+
+
+  .services-hero-tags {
+    justify-content: center;
+
+    margin-top: 18px;
+  }
+
+
+  .services-hero-tags span {
+    min-height: 38px;
+
+    padding:
+      0
+      12px;
+
+    font-size: 10px;
+  }
+
+
+  /* ======================================================
+     MOBILE GENERAL SECTION SPACING
+  ====================================================== */
+
+  .services-featured-section,
+  .services-core-section {
+    padding:
+      68px
+      0;
+  }
+
+
+  .brickwork-section {
+    padding:
+      0
+      0
+      68px;
+  }
+
+
+  .services-featured-heading,
+  .services-core-heading {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+  }
+
+
+  .services-featured-heading h2,
+  .services-core-heading h2,
+  .brickwork-content h2 {
+    font-size:
+      clamp(
+        34px,
+        9vw,
+        45px
+      );
+  }
+
+
+  .services-featured-heading > p,
+  .services-core-heading > p,
+  .brickwork-content p {
+    font-size: 15px;
+  }
+
+
+  /* ======================================================
+     MOBILE SLIDER ARROWS
+  ====================================================== */
+
+  .services-slider-arrow {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    padding: 0;
+
+    color: #000000;
+
+    background:
+      var(
+        --lr-cyan,
+        #90f7f9
+      );
+
+    border:
+      2px solid
+      var(
+        --lr-cyan-light,
+        #cafeff
+      );
+
+    border-radius: 50%;
+
+    box-shadow:
+      0
+      10px
+      28px
+      rgba(0, 0, 0, 0.32);
+
+    transform:
+      translateY(-50%);
+  }
+
+
+  .services-slider-prev {
+    left: 4px;
+  }
+
+
+  .services-slider-next {
+    right: 4px;
+  }
+
+
+  /* ======================================================
+     FEATURED MOBILE CAROUSEL
+  ====================================================== */
+
+  .services-featured-track {
+    display: flex;
+
+    gap: 12px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding:
+      0
+      14px
+      8px;
+
+    scroll-padding-inline: 14px;
+
+    scroll-snap-type:
+      x mandatory;
+
+    scroll-behavior: smooth;
+
+    overscroll-behavior-inline:
+      contain;
+
+    scrollbar-width: none;
+  }
+
+
+  .services-featured-track::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .services-feature-card {
+    flex:
+      0
+      0
+      90%;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    border-radius: 21px;
+  }
+
+
+  .services-feature-image {
+    height: 295px;
+  }
+
+
+  .services-feature-content {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 21px;
+  }
+
+
+  .services-feature-number {
+    font-size: 13px;
+  }
+
+
+  .services-feature-label {
+    font-size: 10px;
+  }
+
+
+  .services-feature-content h3 {
+    font-size: 31px;
+  }
+
+
+  .services-feature-content p {
+    font-size: 14px;
+  }
+
+
+  .services-feature-points {
+    gap: 7px;
+  }
+
+
+  .services-feature-points span {
+    min-height: 38px;
+
+    padding:
+      0
+      12px;
+
+    font-size: 10px;
+  }
+
+
+  .services-feature-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    font-size: 12px;
+  }
+
+
+  /* ======================================================
+     BRICKWORK MOBILE
+  ====================================================== */
+
+  .brickwork-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    border-radius: 22px;
+  }
+
+
+  .brickwork-image {
+    order: 1;
+
+    height: 290px;
+  }
+
+
+  .brickwork-content {
+    order: 2;
+
+    padding:
+      31px
+      20px
+      35px;
+  }
+
+
+  .brickwork-content p {
+    font-size: 15px;
+  }
+
+
+  .brickwork-points {
+    gap: 7px;
+  }
+
+
+  .brickwork-points span {
+    min-height: 38px;
+
+    padding:
+      0
+      13px;
+
+    font-size: 10px;
+  }
+
+
+  .brickwork-button {
+    width: 100%;
+
+    min-height: 50px;
+  }
+
+
+  /* ======================================================
+     CORE SERVICES MOBILE CAROUSEL
+  ====================================================== */
+
+  .services-core-grid {
+    display: flex;
+
+    gap: 11px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding:
+      0
+      14px
+      8px;
+
+    scroll-padding-inline: 14px;
+
+    scroll-snap-type:
+      x mandatory;
+
+    scroll-behavior: smooth;
+
+    overscroll-behavior-inline:
+      contain;
+
+    scrollbar-width: none;
+  }
+
+
+  .services-core-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .services-core-card {
+    flex:
+      0
+      0
+      84%;
+
+    min-height: 400px;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    border-radius: 20px;
+  }
+
+
+  .services-core-image {
+    height: 100%;
+
+    opacity: 1;
+  }
+
+
+  .services-core-image img {
+    filter:
+      saturate(0.84)
+      brightness(0.84)
+      contrast(1.02);
+
+    transform: none;
+  }
+
+
+  .services-core-card::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.02) 0%,
+        rgba(0, 0, 0, 0.05) 31%,
+        rgba(0, 0, 0, 0.15) 49%,
+        rgba(0, 0, 0, 0.57) 73%,
+        rgba(0, 0, 0, 0.91) 100%
+      );
+  }
+
+
+  .services-core-content {
+    min-height: 400px;
+
+    padding: 20px;
+  }
+
+
+  .services-core-index {
+    top: 17px;
+    left: 17px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 10px;
+  }
+
+
+  .services-core-card h3 {
+    font-size: 24px;
+  }
+
+
+  .services-core-card p {
+    font-size: 14px;
+
+    line-height: 1.62;
+  }
+
+
+  /* ======================================================
+     FAQ MOBILE
+  ====================================================== */
+
+  .services-faq-section {
+    padding:
+      72px
+      0;
+  }
+
+
+  .services-faq-heading {
+    margin-bottom: 36px;
+
+    text-align: center;
+  }
+
+
+  .services-faq-heading h2 {
+    font-size:
+      clamp(
+        35px,
+        9.3vw,
+        46px
+      );
+  }
+
+
+  .services-faq-heading p {
+    font-size: 15px;
+  }
+
+
+  .services-faq-columns {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+
+  .services-faq-column {
+    gap: 9px;
+  }
+
+
+  .services-faq-item {
+    border-radius: 15px;
+  }
+
+
+  .services-faq-item summary {
+    min-height: 76px;
+
+    padding:
+      17px
+      14px
+      17px
+      17px;
+
+    font-size: 15px;
+  }
+
+
+  .services-faq-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .services-faq-answer {
+    padding:
+      0
+      50px
+      20px
+      17px;
+  }
+
+
+  .services-faq-answer p {
+    font-size: 14px;
+  }
+
+
+  /* ======================================================
+     CTA MOBILE
+  ====================================================== */
+
+  .services-cta-section {
+    padding:
+      0
+      0
+      65px;
+  }
+
+
+  .services-cta-card {
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 27px;
+
+    padding:
+      35px
+      20px;
+
+    border-radius: 23px;
+  }
+
+
+  .services-cta-card h2 {
+    font-size:
+      clamp(
+        36px,
+        9.5vw,
+        48px
+      );
+  }
+
+
+  .services-cta-card p {
+    font-size: 14px;
+  }
+
+
+  .services-cta-actions {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 8px;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .services-cta-primary,
+  .services-cta-secondary {
+    min-height: 48px;
+
+    padding:
+      0
+      12px;
+
+    font-size: 11px;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   <= 479px
+========================================================== */
+
+@media (max-width: 479px) {
+
+  /* HERO */
+
+  .services-hero-container {
+    padding-top: 103px;
+
+    padding-bottom: 48px;
+  }
+
+
+  .services-hero-main h1 {
+    font-size:
+      clamp(
+        34px,
+        10.2vw,
+        42px
+      );
+  }
+
+
+  .services-hero-side p {
+    font-size: 14px;
+  }
+
+
+  /* SECTION SPACING */
+
+  .services-featured-section,
+  .services-core-section {
+    padding:
+      60px
+      0;
+  }
+
+
+  /* FEATURED */
+
+  .services-feature-card {
+    flex-basis: 92%;
+  }
+
+
+  .services-feature-image {
+    height: 270px;
+  }
+
+
+  /* BRICKWORK */
+
+  .brickwork-image {
+    height: 250px;
+  }
+
+
+  /* CORE */
+
+  .services-core-card {
+    flex-basis: 89%;
+
+    min-height: 390px;
+  }
+
+
+  .services-core-content {
+    min-height: 390px;
+  }
+
+
+  .services-core-card h3 {
+    font-size: 23px;
+  }
+
+
+  /* FAQ */
+
+  .services-faq-section {
+    padding:
+      62px
+      0;
+  }
+
+
+  .services-faq-heading h2 {
+    font-size:
+      clamp(
+        33px,
+        9.5vw,
+        41px
+      );
+  }
+
+
+  /* CTA */
+
+  .services-cta-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+   <= 359px
+========================================================== */
+
+@media (max-width: 359px) {
+
+  .services-hero-main h1 {
+    font-size: 32px;
+  }
+
+
+  .services-feature-card {
+    flex-basis: 94%;
+  }
+
+
+  .services-core-card {
+    flex-basis: 92%;
+  }
+
+
+  .services-feature-points span,
+  .brickwork-points span {
+    font-size: 9px;
+  }
+
+}
+
+
+/* ==========================================================
+   TOUCH DEVICES
+
+   Avoid hover-only visual dependency.
+========================================================== */
+
+@media (hover: none) {
+
+  .services-feature-image img,
+  .brickwork-image img,
+  .services-core-image img {
+    transform: none;
+  }
+
+
+  .services-core-card:hover {
+    transform: none;
+  }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-featured-track,
+  .services-core-grid {
+    scroll-behavior: auto;
+  }
+
+
+  .services-feature-image img,
+  .brickwork-image img,
+  .services-core-card,
+  .services-core-image img,
+  .services-feature-button,
+  .brickwork-button,
+  .services-cta-primary,
+  .services-cta-secondary,
+  .services-faq-toggle::after {
+    transition: none !important;
+  }
+
+}
+
+/* ==========================================================
+   HERO MOSAIC IMAGE POSITIONING
+========================================================== */
+
+.project-gallery-hero-image-main img {
+  object-position: center 45%;
+}
+
+
+.project-gallery-hero-rendered img {
+  object-position: center 48%;
+}
+
+
+.project-gallery-hero-completed img {
+  object-position: center 58%;
+}
