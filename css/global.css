@@ -2494,3 +2494,599 @@ p {
 
 }
 
+/* ==========================================================
+   MOBILE CUSTOM SELECT
+   Replaces native full-screen mobile select UI
+========================================================== */
+
+
+/*
+   Desktop:
+   Keep the normal select.
+   Custom mobile control stays hidden.
+*/
+
+.mobile-select {
+  display: none;
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+
+  /*
+     Hide the browser's native select visually.
+
+     The select remains in the DOM so:
+     - Web3Forms still receives its value
+     - your existing JS validation still works
+     - no form names need to change
+  */
+
+  .quote-field select.mobile-select-native {
+    display: none !important;
+  }
+
+
+  .mobile-select {
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+  }
+
+
+  /* --------------------------------------------------------
+     BUTTON THAT LOOKS LIKE THE NORMAL FORM FIELD
+  -------------------------------------------------------- */
+
+  .mobile-select-trigger {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    width: 100%;
+    height: 52px;
+
+    padding:
+      0
+      15px;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    background:
+      rgba(255, 255, 255, 0.075);
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.16);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-family:
+      var(--font-body);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+      background-color var(--transition),
+      border-color var(--transition),
+      box-shadow var(--transition);
+  }
+
+
+  .mobile-select-trigger:hover {
+    background:
+      rgba(255, 255, 255, 0.095);
+  }
+
+
+  .mobile-select-trigger:focus-visible {
+    border-color:
+      rgba(144, 247, 249, 0.85);
+
+    box-shadow:
+      0 0 0 3px
+      rgba(144, 247, 249, 0.08);
+  }
+
+
+  .mobile-select-trigger-value {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
+  /*
+     Placeholder appearance.
+  */
+
+  .mobile-select-trigger.is-placeholder
+  .mobile-select-trigger-value {
+    color:
+      rgba(255, 255, 255, 0.43);
+  }
+
+
+  .mobile-select-trigger-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+      0
+      0
+      auto;
+
+    width: 24px;
+    height: 24px;
+
+    color:
+      var(--lr-cyan);
+
+    font-size: 15px;
+
+    transition:
+      transform
+      var(--transition);
+  }
+
+
+  .mobile-select-trigger[
+    aria-expanded="true"
+  ]
+  .mobile-select-trigger-icon {
+    transform:
+      rotate(180deg);
+  }
+
+
+  /*
+     Existing validation can add
+     .is-invalid to the real select.
+     This then makes our visible
+     mobile trigger red as well.
+  */
+
+  .mobile-select-native.is-invalid
+  +
+  .mobile-select
+  .mobile-select-trigger {
+    border-color:
+      #ff6a6a;
+
+    box-shadow:
+      0 0 0 3px
+      rgba(255, 106, 106, 0.07);
+  }
+
+
+
+  /* ========================================================
+     BACKDROP
+  ======================================================== */
+
+  .mobile-select-backdrop {
+    position: fixed;
+
+    z-index: 2000;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      22px;
+
+    background:
+      rgba(0, 0, 0, 0.68);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    backdrop-filter:
+      blur(5px);
+
+    -webkit-backdrop-filter:
+      blur(5px);
+
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease;
+  }
+
+
+  .mobile-select-backdrop.is-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+
+
+  /* ========================================================
+     POPUP
+  ======================================================== */
+
+  .mobile-select-popup {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 420px;
+
+    /*
+       Crucial part:
+       never takes over the whole screen.
+    */
+
+    max-height:
+      min(
+        68vh,
+        540px
+      );
+
+    overflow: hidden;
+
+    background:
+      #0b0d0d;
+
+    border:
+      1px solid
+      rgba(144, 247, 249, 0.22);
+
+    border-radius:
+      23px;
+
+    box-shadow:
+      0
+      28px
+      85px
+      rgba(0, 0, 0, 0.58);
+
+    transform:
+      translateY(15px)
+      scale(0.97);
+
+    transition:
+      transform 200ms ease;
+  }
+
+
+  .mobile-select-backdrop.is-open
+  .mobile-select-popup {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+
+  /* ========================================================
+     POPUP HEADER
+  ======================================================== */
+
+  .mobile-select-popup-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    flex:
+      0
+      0
+      auto;
+
+    padding:
+      17px
+      17px
+      14px
+      20px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.1);
+  }
+
+
+  .mobile-select-popup-title {
+    margin: 0;
+
+    color:
+      #ffffff;
+
+    font-family:
+      var(--font-title);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing:
+      -0.025em;
+  }
+
+
+  /*
+     Very obvious close button.
+  */
+
+  .mobile-select-close {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+      0
+      0
+      39px;
+
+    width: 39px;
+    height: 39px;
+
+    padding: 0;
+
+    color:
+      #000000;
+
+    background:
+      var(--lr-cyan);
+
+    border: 0;
+
+    border-radius:
+      50%;
+
+    font-size: 20px;
+
+    line-height: 1;
+  }
+
+
+  .mobile-select-close:active {
+    transform:
+      scale(0.95);
+  }
+
+
+
+  /* ========================================================
+     SCROLLABLE OPTIONS
+  ======================================================== */
+
+  .mobile-select-options {
+    flex:
+      1
+      1
+      auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior:
+      contain;
+
+    padding:
+      9px;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width:
+      thin;
+
+    scrollbar-color:
+      rgba(144, 247, 249, 0.5)
+      rgba(255, 255, 255, 0.05);
+  }
+
+
+  .mobile-select-options::-webkit-scrollbar {
+    width: 5px;
+  }
+
+
+  .mobile-select-options::-webkit-scrollbar-track {
+    background:
+      rgba(255, 255, 255, 0.04);
+  }
+
+
+  .mobile-select-options::-webkit-scrollbar-thumb {
+    background:
+      rgba(144, 247, 249, 0.48);
+
+    border-radius:
+      999px;
+  }
+
+
+
+  /* ========================================================
+     ONE OPTION
+  ======================================================== */
+
+  .mobile-select-option {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding:
+      10px
+      12px;
+
+    color:
+      rgba(255, 255, 255, 0.82);
+
+    text-align: left;
+
+    background:
+      transparent;
+
+    border:
+      1px solid
+      transparent;
+
+    border-radius:
+      13px;
+
+    font-family:
+      var(--font-body);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+      color var(--transition),
+      background-color var(--transition),
+      border-color var(--transition);
+  }
+
+
+  .mobile-select-option
+  +
+  .mobile-select-option {
+    margin-top: 3px;
+  }
+
+
+  .mobile-select-option:hover,
+  .mobile-select-option:focus-visible {
+    color:
+      #ffffff;
+
+    background:
+      rgba(255, 255, 255, 0.06);
+
+    outline: none;
+  }
+
+
+  /*
+     Currently selected option.
+  */
+
+  .mobile-select-option.is-selected {
+    color:
+      #000000;
+
+    background:
+      var(--lr-cyan);
+
+    border-color:
+      var(--lr-cyan);
+  }
+
+
+  .mobile-select-option-check {
+    display: none;
+
+    flex:
+      0
+      0
+      auto;
+
+    font-size: 17px;
+  }
+
+
+  .mobile-select-option.is-selected
+  .mobile-select-option-check {
+    display: block;
+  }
+
+
+  /*
+     Small phones.
+  */
+
+  @media (max-width: 479px) {
+
+    .mobile-select-backdrop {
+      padding:
+        18px;
+    }
+
+
+    .mobile-select-popup {
+      max-height:
+        64vh;
+
+      border-radius:
+        20px;
+    }
+
+
+    .mobile-select-popup-header {
+      padding:
+        15px
+        14px
+        13px
+        17px;
+    }
+
+
+    .mobile-select-popup-title {
+      font-size: 17px;
+    }
+
+
+    .mobile-select-option {
+      min-height: 50px;
+
+      font-size: 14px;
+    }
+
+  }
+
+}
+
+
+
+/* ==========================================================
+   PREVENT PAGE SCROLL WHILE OPTION POPUP IS OPEN
+========================================================== */
+
+body.mobile-select-open {
+  overflow: hidden;
+}

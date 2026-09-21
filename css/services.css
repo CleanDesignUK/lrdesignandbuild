@@ -3141,3 +3141,47 @@ summary::-webkit-details-marker {
 .project-gallery-hero-completed img {
   object-position: center 58%;
 }
+
+/* ==========================================================
+   FIX FEATURED SERVICE MOBILE ARROWS
+   Keep arrows centred on image, away from text
+========================================================== */
+
+@media (max-width: 767px) {
+
+  .services-featured-section
+  .services-slider-arrow {
+    top: 147px;
+
+    transform:
+      translateY(-50%);
+  }
+
+
+  .services-featured-section
+  .services-slider-prev {
+    left: 3px;
+  }
+
+
+  .services-featured-section
+  .services-slider-next {
+    right: 3px;
+  }
+
+}
+
+
+@media (max-width: 479px) {
+
+  /*
+     Image becomes 270px high here,
+     so centre arrows within that image.
+  */
+
+  .services-featured-section
+  .services-slider-arrow {
+    top: 135px;
+  }
+
+}
