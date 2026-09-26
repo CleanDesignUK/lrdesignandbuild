@@ -311,7 +311,7 @@ async function handleFormSubmission(event) {
   if (
     !accessKey ||
     accessKey ===
-      "YOUR_WEB3FORMS_ACCESS_KEY"
+      "669b93eb-2bd6-4db4-bf96-cade430fcc07"
   ) {
 
     Swal.fire({
